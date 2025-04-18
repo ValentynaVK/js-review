@@ -160,7 +160,7 @@
 
 //10.Масив orders складається з цін замовлень у доларах.
 
-const orders = [120, 75, 200, 99, 15, 180, 30];
+// const orders = [120, 75, 200, 99, 15, 180, 30];
 
 // let total = orders.reduce((acc, amount) => acc + amount, 0);
 // console.log(total);
@@ -176,5 +176,5 @@ const orders = [120, 75, 200, 99, 15, 180, 30];
 
 //==================
 
-const orderInEuro = orders.map((amount) => amount * 0.92);
-console.log(orderInEuro);
+// const orderInEuro = orders.map((amount) => amount * 0.92);
+// console.log(orderInEuro);
