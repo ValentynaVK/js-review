@@ -139,4 +139,42 @@
 
 //=====================================================================================================
 
-//9.
+//9.Є масив відповідей 1 (Так) та 0 (Ні).
+
+// const votes = [1, 0, 1, 1, 0, 1, 0, 1, 1, 0];
+
+// const totalVotes = votes.length;
+// console.log(totalVotes);
+
+//=======================
+
+// const yesVotes = votes.filter((vote) => vote === 1);
+// console.log(yesVotes);
+
+//=====================
+
+// const imageVotes = votes.map((vote) => (vote === 1 ? "✅" : "❌"));
+// console.log(imageVotes);
+
+//========================================================================================================
+
+//10.Масив orders складається з цін замовлень у доларах.
+
+const orders = [120, 75, 200, 99, 15, 180, 30];
+
+// let total = orders.reduce((acc, amount) => acc + amount, 0);
+// console.log(total);
+//===================
+
+// const maxOrder = orders.reduce((max, amount) => (amount > max ? amount : max));
+// console.log(maxOrder);
+
+//==================
+
+// const priceyOrders = orders.filter((amount) => amount > 100);
+// console.log(priceyOrders);
+
+//==================
+
+const orderInEuro = orders.map((amount) => amount * 0.92);
+console.log(orderInEuro);
