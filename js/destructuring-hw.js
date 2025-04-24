@@ -121,3 +121,13 @@ const customer = {
     country: "Україна"
   }
 };
+
+const {
+  fullName: {firstName}
+  address: {city, country}
+
+} = customer;
+
+console.log(firstName);
+console.log(city);
+cobsole.log(country);
