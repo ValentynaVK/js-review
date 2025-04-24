@@ -75,13 +75,49 @@
 //======================================================================================
 
 //7.Створити змінні name, role і level, де для level використати значення за замовчуванням "junior".
-const employee = {
-  name: "Петро",
-  role: "frontend",
+// const employee = {
+//   name: "Петро",
+//   role: "frontend",
+// };
+
+// const { name, role, level = "junior" } = employee;
+
+// console.log(name);
+// console.log(role);
+// console.log(level);
+
+//======================================================================================
+
+//8.Створити змінні id, title, pages і змінну otherProps, яка міститиме решту властивостей.
+// const book = {
+//   id: 123,
+//   title: "JavaScript: Повне керівництво",
+//   author: "Девід Фленаган",
+//   year: 2020,
+//   pages: 720,
+//   publisher: "O'Reilly",
+// };
+
+// const { id, title, pages, ...otherProps } = book;
+
+// console.log(id);
+// console.log(title);
+// console.log(pages);
+// console.log(otherProps);
+
+//====================================================================================
+
+//9.Отримати змінні firstName, city і country.
+
+const customer = {
+  id: 4321,
+  fullName: {
+    firstName: "Анна",
+    lastName: "Коваленко"
+  },
+  address: {
+    street: "Шевченка",
+    city: "Львів"
+    country: "Україна"
+  }
 };
-
-const { name, role, level = "junior" } = employee;
-
-console.log(name);
-console.log(role);
-console.log(level);
