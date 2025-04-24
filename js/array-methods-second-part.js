@@ -37,8 +37,19 @@
 //2. Перевірити, чи всі числа у масиві кратні своєму індексу. Число з індексом нуль можна пропустити.
 
 // Тестові випадки:
-// console.log(allMultiplesOfIndex([10, 2, 4, 6, 12])); // true
-// console.log(allMultiplesOfIndex([10, 3, 5, 9])); // false
+
+// const arr = [10, 2, 4, 6, 12];
+// const arrSecond = [10, 3, 5, 9];
+
+// function allMultiplesOfIndex(digits) {
+//   const isNumbers = digits.every(
+//     (number, index) => index === 0 || number % index === 0
+//   );
+//   return isNumbers;
+// }
+
+// console.log(allMultiplesOfIndex(arr)); // true
+// console.log(allMultiplesOfIndex(arrSecond)); // false
 
 //================================================================
 
@@ -139,9 +150,9 @@
 //   return [name, parseFloat(time)];
 // });
 
-// const bestTime = Math.min(...parsedResults.map(([_, time]) => time));
-// const allUnderFifteen = parsedResults.every(([_, time]) => time < 15);
-// const underEleven = parsedResults.some(([_, time]) => time < 11);
+// const bestTime = Math.min(...parsedResults.map(([, time]) => time));
+// const allUnderFifteen = parsedResults.every(([, time]) => time < 15);
+// const underEleven = parsedResults.some(([, time]) => time < 11);
 
 // const topThree = parsedResults
 //   .sort((a, b) => a[1] - b[1])
