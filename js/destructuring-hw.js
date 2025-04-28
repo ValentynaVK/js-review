@@ -109,25 +109,103 @@
 
 //9.Отримати змінні firstName, city і country.
 
-const customer = {
-  id: 4321,
-  fullName: {
-    firstName: "Анна",
-    lastName: "Коваленко"
+// const customer = {
+//   id: 4321,
+//   fullName: {
+//     firstName: "Анна",
+//     lastName: "Коваленко"
+//   },
+//   address: {
+//     street: "Шевченка",
+//     city: "Львів"
+//     country: "Україна"
+//   }
+// };
+
+// const {
+//   fullName: {firstName}
+//   address: {city, country}
+
+// } = customer;
+
+// console.log(firstName);
+// console.log(city);
+// cobsole.log(country);
+
+//=======================================================================
+
+//10.Створити функцію displayProduct, яка приймає об'єкт і деструктуризує його параметри.
+// Обʼєкт має поля name, price, а також category, яке може бути відсутнім.  Якщо категорія відсутня, функція displayProduct має підставити дефолтне значенням - Електроніка.
+
+// function displayProduct({ name, price, category = "Електроніка" }) {
+//   console.log(`Товар: ${name}, Ціна: ${price} грн, Категорія: ${category}`);
+// }
+
+// const product = { name: "Ноутбук", price: 25000 };
+
+// displayProduct(product);
+// Результат "Товар: Ноутбук, Ціна: 25000 грн, Категорія: Електроніка"
+
+//=======================================================================
+
+//11.Отримати назву першої категорії, другий тег і третій коментар.
+// const blogPost = {
+//   title: "Вивчаємо JavaScript",
+//   categories: ["Програмування", "Веб-розробка", "Фронтенд"],
+//   tags: ["javascript", "деструктуризація", "es6"],
+//   comments: [
+//     { author: "user1", text: "Дуже корисно!" },
+//     { author: "user2", text: "Дякую за пояснення" },
+//     { author: "user3", text: "Чудова стаття" },
+//   ],
+// };
+
+// const {
+//   categories: [firstCategory],
+//   tags: [, secondTag],
+//   comments: [, , thirdComment],
+// } = blogPost;
+
+// console.log(firstCategory);
+// console.log(secondTag);
+// console.log(thirdComment);
+
+//=======================================================================
+
+//12. Створити функцію processData, яка використовує деструктуризацію для обробки даних.
+
+// Функція має витягувати: ім'я користувача, місто, перші два вміння і решту як масив.
+
+// Функція має повертати рядок у вигляді:
+
+// *Анна з міста Одеса володіє HTML, CSS та ще 3 технологіями.*
+
+function processData({
+  user: {
+    name,
+    details: {
+      location: { city },
+    },
   },
-  address: {
-    street: "Шевченка",
-    city: "Львів"
-    country: "Україна"
-  }
+  skills,
+}) {
+  const [firstSkill, secondSkill, ...otherSkills] = skills;
+  const otherCount = otherSkills.length;
+
+  return `${name} з міста ${city} володіє ${firstSkill}, ${secondSkill} та ще ${otherCount} технологіями.`;
+}
+
+const userData = {
+  user: {
+    name: "Анна",
+    details: {
+      location: {
+        city: "Одеса",
+        country: "Україна",
+      },
+    },
+  },
+  skills: ["HTML", "CSS", "JavaScript", "React", "Node.js"],
 };
 
-const {
-  fullName: {firstName}
-  address: {city, country}
-
-} = customer;
-
-console.log(firstName);
-console.log(city);
-cobsole.log(country);
+console.log(processData(userData));
