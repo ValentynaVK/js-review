@@ -180,32 +180,32 @@
 
 // *Анна з міста Одеса володіє HTML, CSS та ще 3 технологіями.*
 
-function processData({
-  user: {
-    name,
-    details: {
-      location: { city },
-    },
-  },
-  skills,
-}) {
-  const [firstSkill, secondSkill, ...otherSkills] = skills;
-  const otherCount = otherSkills.length;
+// function processData({
+//   user: {
+//     name,
+//     details: {
+//       location: { city },
+//     },
+//   },
+//   skills,
+// }) {
+//   const [firstSkill, secondSkill, ...otherSkills] = skills;
+//   const otherCount = otherSkills.length;
 
-  return `${name} з міста ${city} володіє ${firstSkill}, ${secondSkill} та ще ${otherCount} технологіями.`;
-}
+//   return `${name} з міста ${city} володіє ${firstSkill}, ${secondSkill} та ще ${otherCount} технологіями.`;
+// }
 
-const userData = {
-  user: {
-    name: "Анна",
-    details: {
-      location: {
-        city: "Одеса",
-        country: "Україна",
-      },
-    },
-  },
-  skills: ["HTML", "CSS", "JavaScript", "React", "Node.js"],
-};
+// const userData = {
+//   user: {
+//     name: "Анна",
+//     details: {
+//       location: {
+//         city: "Одеса",
+//         country: "Україна",
+//       },
+//     },
+//   },
+//   skills: ["HTML", "CSS", "JavaScript", "React", "Node.js"],
+// };
 
-console.log(processData(userData));
+// console.log(processData(userData));
