@@ -1,4 +1,4 @@
-const animals = ["собака", "кіт", "слон", "бджола"];
+// const animals = ["собака", "кіт", "слон", "бджола"];
 
 // const sortedAnimals = animals.toSorted((a, b) => b.localeCompare(a));
 
@@ -55,18 +55,18 @@ const animals = ["собака", "кіт", "слон", "бджола"];
 
 //===================================
 //Є список пріоритетів: high, medium, low. Відсортувати задачі за пріоритетом (high → medium → low).
-const tasks = [
-  { title: "Task 1", priority: "low" },
-  { title: "Task 2", priority: "high" },
-  { title: "Task 3", priority: "medium" },
-  { title: "Task 4", priority: "low" },
-  { title: "Task 5", priority: "high" },
-];
+// const tasks = [
+//   { title: "Task 1", priority: "low" },
+//   { title: "Task 2", priority: "high" },
+//   { title: "Task 3", priority: "medium" },
+//   { title: "Task 4", priority: "low" },
+//   { title: "Task 5", priority: "high" },
+// ];
 
-const priority = { high: 1, medium: 2, low: 3 };
+// const priority = { high: 1, medium: 2, low: 3 };
 
-const sortedTasks = tasks.toSorted(
-  (a, b) => priority[a.priority] - priority[b.priority]
-);
+// const sortedTasks = tasks.toSorted(
+//   (a, b) => priority[a.priority] - priority[b.priority]
+// );
 
-console.log(sortedTasks);
+// console.log(sortedTasks);
