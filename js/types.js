@@ -79,33 +79,57 @@
 // - Створити функцію, яка приймає масив тегів та необмежену кількість нових тегів.
 // - Повернути новий масив, у якому старі та нові теги об'єднані.
 // - Переконатись, що вихідний масив не змінився.
-const tags = ["JavaScript", "React"];
+// const tags = ["JavaScript", "React"];
 
-// Написати тут функцію addTags
-function addTags(oldTags, ...newTags) {
-  return [...oldTags, ...newTags];
-}
+// // Написати тут функцію addTags
+// function addTags(oldTags, ...newTags) {
+//   return [...oldTags, ...newTags];
+// }
 
-const newTags = addTags(tags, "Next.js", "TypeScript", "Tailwind");
+// const newTags = addTags(tags, "Next.js", "TypeScript", "Tailwind");
 
-console.log(tags); // ["JavaScript", "React"]
-console.log(newTags); // ["JavaScript", "React", "Next.js", "TypeScript", "Tailwind"]
+// console.log(tags); // ["JavaScript", "React"]
+// console.log(newTags); // ["JavaScript", "React", "Next.js", "TypeScript", "Tailwind"]
 
-// ===========================
-//- Написати функцію, яка приймає масив і число `N`.
-// - Функція має повертати два масиви:
-//     - Перший містить перші N елементів.
-//     - Другий містить решту.
-const items = ["A", "B", "C", "D", "E", "F"];
+// // ===========================
+// //- Написати функцію, яка приймає масив і число `N`.
+// // - Функція має повертати два масиви:
+// //     - Перший містить перші N елементів.
+// //     - Другий містить решту.
+// const items = ["A", "B", "C", "D", "E", "F"];
 
-// Написати тут функцію splitArray
-function splitArray(array, n) {
-  const firstPart = array.slice(0, n);
-  const secondPart = array.slice(n);
-  return [firstPart, secondPart];
-}
+// // Написати тут функцію splitArray
+// function splitArray(array, n) {
+//   const firstPart = array.slice(0, n);
+//   const secondPart = array.slice(n);
+//   return [firstPart, secondPart];
+// }
 
-const [firstPage, secondPage] = splitArray(items, 3);
+// const [firstPage, secondPage] = splitArray(items, 3);
 
-console.log(firstPage); // ["A", "B", "C"]
-console.log(secondPage); // ["D", "E", "F"]
+// console.log(firstPage); // ["A", "B", "C"]
+// console.log(secondPage); // ["D", "E", "F"]
+
+// ============================
+
+const formTemplate = {
+  title: undefined,
+  description: "Help us improve our service",
+  questions: [
+    "How satisfied are you with our product?",
+    "Would you recommend us to others?",
+    "Any suggestions for improvement?",
+  ],
+};
+
+// const newFormTemplate = JSON.parse(JSON.stringify(formTemplate));
+// // newFormTemplate.title = "New Title";
+// newFormTemplate.questions[0] = "New Question";
+
+// console.log(formTemplate);
+// console.log(newFormTemplate);
+
+const newFormTemplate = structuredClone(formTemplate);
+newFormTemplate.questions[0] = "new Question";
+console.log(newFormTemplate);
+console.log(formTemplate);
