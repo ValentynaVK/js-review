@@ -169,42 +169,47 @@
 // - Вивести всі типи контенту, які є у масиві `content` без повторень
 // - Порахувати кількість властивостей у документі (має бути 4 - title, author, tags, content)
 // - Вивести у консоль у вигляді масиву значення усіх ключів документа.
-const document = {
-  title: "Щотижневий звіт",
-  author: "Olena",
-  tags: ["робота", "звіт", "важливо"],
-  content: [
-    { id: 1, type: "text", value: "Загальний прогрес команди" },
-    { id: 2, type: "image", src: "team.jpg" },
-    { id: 3, type: "text", value: "Наступні кроки" },
-    { id: 4, type: "code", value: "console.log('hello');" },
-  ],
-};
+// const document = {
+//   title: "Щотижневий звіт",
+//   author: "Olena",
+//   tags: ["робота", "звіт", "важливо"],
+//   content: [
+//     { id: 1, type: "text", value: "Загальний прогрес команди" },
+//     { id: 2, type: "image", src: "team.jpg" },
+//     { id: 3, type: "text", value: "Наступні кроки" },
+//     { id: 4, type: "code", value: "console.log('hello');" },
+//   ],
+// };
 
-function createDraft() {
-  const draft = structuredClone(document);
+// function createDraft() {
+//   const draft = structuredClone(document);
 
-  draft.content = draft.content.filter(item => item.type !== "image");
+//   draft.content = draft.content.filter(item => item.type !== "image");
 
-  draft.title = "Чернетка: " + draft.title;
+//   draft.title = "Чернетка: " + draft.title;
 
-  draft.tags = draft.tags.filter(tag => !tag.toLowerCase().includes("важливо"));
+//   draft.tags = draft.tags.filter(tag => !tag.toLowerCase().includes("важливо"));
 
-  draft.content = draft.content.map(item => {
-    if ("value" in item) {
-      return { ...item, value: "📝 " + item.value };
-    }
-    return item;
-  });
+//   draft.content = draft.content.map(item => {
+//     if ("value" in item) {
+//       return { ...item, value: "📝 " + item.value };
+//     }
+//     return item;
+//   });
 
-  const uniqueTypes = [...new Set(draft.content.map(item => item.type))];
-  console.log(uniqueTypes);
+//   const uniqueTypes = [...new Set(draft.content.map(item => item.type))];
+//   console.log(uniqueTypes);
 
-  const valuesArray = Object.values(draft);
-  console.log( valuesArray);
+//   const valuesArray = Object.values(draft);
+//   console.log( valuesArray);
 
-  return draft;
-}
+//   const allKeys= Object.keys(draft)
+//   console.log(allKeys);
+  
+  
 
-const draftDoc = createDraft(document);
-console.log( draftDoc);
+//   return draft;
+// }
+
+// const draftDoc = createDraft(document);
+// console.log( draftDoc);
