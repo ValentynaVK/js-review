@@ -112,15 +112,15 @@
 
 // ============================
 
-const formTemplate = {
-  title: undefined,
-  description: "Help us improve our service",
-  questions: [
-    "How satisfied are you with our product?",
-    "Would you recommend us to others?",
-    "Any suggestions for improvement?",
-  ],
-};
+// const formTemplate = {
+//   title: undefined,
+//   description: "Help us improve our service",
+//   questions: [
+//     "How satisfied are you with our product?",
+//     "Would you recommend us to others?",
+//     "Any suggestions for improvement?",
+//   ],
+// };
 
 // const newFormTemplate = JSON.parse(JSON.stringify(formTemplate));
 // // newFormTemplate.title = "New Title";
@@ -129,7 +129,82 @@ const formTemplate = {
 // console.log(formTemplate);
 // console.log(newFormTemplate);
 
-const newFormTemplate = structuredClone(formTemplate);
-newFormTemplate.questions[0] = "new Question";
-console.log(newFormTemplate);
-console.log(formTemplate);
+// const newFormTemplate = structuredClone(formTemplate);
+// newFormTemplate.questions[0] = "new Question";
+// console.log(newFormTemplate);
+// console.log(formTemplate);
+// =======================
+// Є об'єкт `test`, який містить масив питань, кожне з яких має варіанти відповідей.
+
+// Зробіть незалежну копію тесту двома способами. 
+
+// Спробуйте замінити значення `title` на `undefined` і побачити як це вплине на результат.
+
+// Після редагування варіантів відповідей в оригіналі копія не має змінюватися.
+// const test = {
+//   title: "JS Basics",
+//   questions: [
+//     {
+//       text: "Які ключові слова використовуються для оголошення змінної",
+//       options: ["const", "let", "var"],
+//     },
+//   ],
+// };
+// const copy1 = JSON.parse(JSON.stringify(test));
+// const copy2 = structuredClone(test);
+
+// test.title = undefined;
+// test.questions[0].options.push("function");
+
+// console.log(test);
+// console.log(copy1);
+// console.log(copy2);
+
+// ====================
+// - Створити функцію `createDraft(document)`, яка створює повністю незалежну копію документа.
+// - Видалити з копії весь контент з типом ****`image` — це буде "текстова" версія документа.
+// - Змінити `title`, додавши до нього префікс `'Чернетка: '`.
+// - Залишити лише ті `tags`, які НЕ містять слова `'важливо'`
+// - У масиві `content` до `value` кожного елемента додати префікс у вигляді емоджі 📝
+// - Вивести всі типи контенту, які є у масиві `content` без повторень
+// - Порахувати кількість властивостей у документі (має бути 4 - title, author, tags, content)
+// - Вивести у консоль у вигляді масиву значення усіх ключів документа.
+const document = {
+  title: "Щотижневий звіт",
+  author: "Olena",
+  tags: ["робота", "звіт", "важливо"],
+  content: [
+    { id: 1, type: "text", value: "Загальний прогрес команди" },
+    { id: 2, type: "image", src: "team.jpg" },
+    { id: 3, type: "text", value: "Наступні кроки" },
+    { id: 4, type: "code", value: "console.log('hello');" },
+  ],
+};
+
+function createDraft() {
+  const draft = structuredClone(document);
+
+  draft.content = draft.content.filter(item => item.type !== "image");
+
+  draft.title = "Чернетка: " + draft.title;
+
+  draft.tags = draft.tags.filter(tag => !tag.toLowerCase().includes("важливо"));
+
+  draft.content = draft.content.map(item => {
+    if ("value" in item) {
+      return { ...item, value: "📝 " + item.value };
+    }
+    return item;
+  });
+
+  const uniqueTypes = [...new Set(draft.content.map(item => item.type))];
+  console.log(uniqueTypes);
+
+  const valuesArray = Object.values(draft);
+  console.log( valuesArray);
+
+  return draft;
+}
+
+const draftDoc = createDraft(document);
+console.log( draftDoc);
