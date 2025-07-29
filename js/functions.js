@@ -20,44 +20,44 @@
 // ======================
 // Написати функцію detectType, яка буде приймати один аргумент і повертати текст з інформацією про те, до якого саме типу належить передане значення. Врахувати, що тип null - object, але функція має повертати саме ‘null’:
 
-function detectType(value) {
-  if (value === null) {
-    return "Це null";
-  } else {
-    return `Це ${typeof value}`;
-  }
-}
+// function detectType(value) {
+//   if (value === null) {
+//     return "Це null";
+//   } else {
+//     return `Це ${typeof value}`;
+//   }
+// }
 
-console.log(detectType("Привіт")); // "Це string"
-console.log(detectType(123)); // "Це number"
-console.log(detectType(true)); // "Це boolean"
-console.log(detectType(null)); // "Це null"
-console.log(detectType(undefined)); // "Це undefined"
-console.log(detectType(Symbol("id"))); // "Це symbol"
-console.log(detectType(10n)); // "Це bigint"
+// console.log(detectType("Привіт")); // "Це string"
+// console.log(detectType(123)); // "Це number"
+// console.log(detectType(true)); // "Це boolean"
+// console.log(detectType(null)); // "Це null"
+// console.log(detectType(undefined)); // "Це undefined"
+// console.log(detectType(Symbol("id"))); // "Це symbol"
+// console.log(detectType(10n)); // "Це bigint"
 // =========================
 
 // Створити функцію reverseString, яка приймає рядок і повертає його у зворотному порядку. Зробити це за допомогою циклу for.
 // ============================
 
 // Переписати наступний код з використанням стрілкових функцій:
-function ask(question, yes, no) {
-  if (confirm(question)) {
-    yes();
-  } else {
-    no();
-  }
-}
+// function ask(question, yes, no) {
+//   if (confirm(question)) {
+//     yes();
+//   } else {
+//     no();
+//   }
+// }
 
-ask(
-  "Ви згодні?",
-  function () {
-    console.log("Ви погодились.");
-  },
-  function () {
-    console.log("Ви заперечили.");
-  }
-);
+// ask(
+//   "Ви згодні?",
+//   function () {
+//     console.log("Ви погодились.");
+//   },
+//   function () {
+//     console.log("Ви заперечили.");
+//   }
+// );
 // ============================
 
 // 10. Уявіть, що ви організовуєте приватну вечірку. На вході охоронець перевіряє, чи може людина потрапити на цю вечірку.
@@ -87,5 +87,38 @@ ask(
 
 // ==============================
 // Обчислити  вартість товару, враховуючи знижку. Функція приймає два параметри - price і discount. Якщо при виклику функції знижка не передана, вважаємо, що знижка дорівнює нулю.
-console.log(calculatePrice(100)); // 100
-console.log(calculatePrice(100, 0.1)); // 90
+// console.log(calculatePrice(100)); // 100
+// console.log(calculatePrice(100, 0.1)); // 90
+// ========================
+
+// function repeatWord(word, counting = 3) {
+//   return word.repeat(counting);
+// }
+
+// console.log(repeatWord("Hello "));
+// console.log(wordRepeat());
+// console.log(wordRepeating());
+
+// const wordRepeat = function (word, counting = 3) {
+//   return word.repeat(counting);
+// };
+
+// const wordRepeating = (word, counting = 3) => {
+//   return word.repeat(counting);
+// };
+// ========================
+
+function greeting(name, showFn) {
+  showFn(name);
+}
+
+greeting("Ivan", showUserInConsole);
+// greeting("Ivan", showUserInAlert);
+
+function showUserInConsole(name) {
+  console.log(` Hello ${name}`);
+}
+
+function showUserInAlert(name) {
+  alert(`Hello ${name}`);
+}
