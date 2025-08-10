@@ -108,17 +108,17 @@
 // };
 // ========================
 
-function greeting(name, showFn) {
-  showFn(name);
-}
+// function greeting(name, showFn) {
+//   showFn(name);
+// }
 
-greeting("Ivan", showUserInConsole);
-// greeting("Ivan", showUserInAlert);
+// greeting("Ivan", showUserInConsole);
+// // greeting("Ivan", showUserInAlert);
 
-function showUserInConsole(name) {
-  console.log(` Hello ${name}`);
-}
+// function showUserInConsole(name) {
+//   console.log(` Hello ${name}`);
+// }
 
-function showUserInAlert(name) {
-  alert(`Hello ${name}`);
-}
+// function showUserInAlert(name) {
+//   alert(`Hello ${name}`);
+// }
