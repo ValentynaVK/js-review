@@ -1,219 +1,37 @@
-// ========================================
-// ЗАВДАННЯ ДЛЯ ПОЧАТКІВЦЯ В JAVASCRIPT
-// ========================================
-
-// Завдання 1: Створення змінних та виведення
-// Створіть змінні для вашого імені, віку та міста
-// Виведіть їх у консоль та створіть рядок з цією інформацією
-
-// Ваш код тут:
-let name = "Valentyna";
-let age = 25;
-let city = "Kyiv";
-
-console.log("Ім'я:", name);
-console.log("Вік:", age);
-console.log("Місто:", city);
-
-let info = `Мене звати ${name}, мені ${age} років, я живу в місті ${city}`;
-console.log(info);
-
-// ========================================
-// Завдання 2: Математичні операції
-// Створіть дві змінні з числами та виконайте:
-// - додавання
-// - віднімання
-// - множення
-// - ділення
-// - залишок від ділення
-
-// Ваш код тут:
-let num1 = 15;
-let num2 = 4;
-
-console.log("Додавання:", num1 + num2);
-console.log("Віднімання:", num1 - num2);
-console.log("Множення:", num1 * num2);
-console.log("Ділення:", num1 / num2);
-console.log("Залишок від ділення:", num1 % num2);
-
-// ========================================
-// Завдання 3: Робота з рядками
-// Створіть два рядки та виконайте:
-// - об'єднання рядків
-// - перевірку довжини
-// - перетворення у верхній/нижній регістр
-// - пошук підрядка
-
-// Ваш код тут:
-let str1 = "Привіт";
-let str2 = "Світ";
-
-console.log("Об'єднання:", str1 + " " + str2);
-console.log("Довжина першого рядка:", str1.length);
-console.log("У верхньому регістрі:", str1.toUpperCase());
-console.log("У нижньому регістрі:", str2.toLowerCase());
-console.log("Чи містить 'віт':", str1.includes("віт"));
-
-// ========================================
-// Завдання 4: Умовні конструкції
-// Створіть програму, яка перевіряє:
-// - чи число парне або непарне
-// - чи число додатнє, від'ємне або нуль
-// - чи число знаходиться в діапазоні від 1 до 100
-
-// Ваш код тут:
-let number = 25;
-
-if (number % 2 === 0) {
-    console.log(number + " - парне число");
-} else {
-    console.log(number + " - непарне число");
+function makeTransaction(quantity, pricePerDroid) {
+  const totalPrice = quantity * pricePerDroid;
+  return `You ordered ${quantity} droids worth ${totalPrice} credits!`;
 }
 
-if (number > 0) {
-    console.log(number + " - додатнє число");
-} else if (number < 0) {
-    console.log(number + " - від'ємне число");
-} else {
-    console.log(number + " - нуль");
+console.log(makeTransaction(5, 3000)); // "You ordered 5 droids worth 15000 credits!"
+console.log(makeTransaction(3, 1000)); // "You ordered 3 droids worth 3000 credits!"
+console.log(makeTransaction(10, 500)); // "You ordered 10 droids worth 5000 credits!"
+
+function getShippingMessage(country, price, deliveryFee) {
+  const totalCost = price + deliveryFee;
+  return `Shipping to ${country} will cost ${totalCost} credits`;
 }
 
-if (number >= 1 && number <= 100) {
-    console.log(number + " знаходиться в діапазоні від 1 до 100");
-} else {
-    console.log(number + " не знаходиться в діапазоні від 1 до 100");
+console.log(getShippingMessage("Australia", 120, 50)); // "Shipping to Australia will cost 170 credits"
+console.log(getShippingMessage("Germany", 80, 20)); // "Shipping to Germany will cost 100 credits"
+console.log(getShippingMessage("Sweden", 100, 20)); // "Shipping to Sweden will cost 120 credits"
+
+function getElementWidth(content,padding, border){
+// Функція getElementWidth приймає три параметри: content, padding, border. Всі вони передаються у вигляді рядків з одиницями "px", наприклад "50px".
+// Щоб знайти загальну ширину елемента, потрібно додати ширину контенту, падінгу та бордера.
+// Оскільки параметри передані як рядки, спочатку потрібно отримати числові значення. Для цього можна використати parseFloat, який перетворює рядок на число, ігноруючи "px".
+// Далі складаємо ці три значення і повертаємо результат.
+
+const contentWidth = parseFloat(content); // отримуємо числове значення ширини контенту
+const paddingWidth = parseFloat(padding); // отримуємо числове значення падінгу
+const borderWidth = parseFloat(border);   // отримуємо числове значення бордера
+
+const totalWidth = contentWidth + paddingWidth + borderWidth; // обчислюємо загальну ширину
+
+return totalWidth; // повертаємо результат
+
 }
 
-// ========================================
-// Завдання 5: Масиви
-// Створіть масив з 5 елементів та виконайте:
-// - додавання елемента в кінець
-// - видалення останнього елемента
-// - додавання елемента на початок
-// - видалення першого елемента
-// - пошук елемента в масиві
-
-// Ваш код тут:
-let fruits = ["яблуко", "банан", "апельсин", "груша", "виноград"];
-
-console.log("Початковий масив:", fruits);
-
-fruits.push("киві");
-console.log("Після додавання в кінець:", fruits);
-
-fruits.pop();
-console.log("Після видалення останнього:", fruits);
-
-fruits.unshift("полуниця");
-console.log("Після додавання на початок:", fruits);
-
-fruits.shift();
-console.log("Після видалення першого:", fruits);
-
-let searchFruit = "банан";
-if (fruits.includes(searchFruit)) {
-    console.log(searchFruit + " знайдено в масиві");
-} else {
-    console.log(searchFruit + " не знайдено в масиві");
-}
-
-// ========================================
-// Завдання 6: Цикли
-// Використовуючи цикл for, виведіть:
-// - числа від 1 до 10
-// - парні числа від 2 до 20
-// - суму чисел від 1 до 100
-
-// Ваш код тут:
-console.log("Числа від 1 до 10:");
-for (let i = 1; i <= 10; i++) {
-    console.log(i);
-}
-
-console.log("Парні числа від 2 до 20:");
-for (let i = 2; i <= 20; i += 2) {
-    console.log(i);
-}
-
-let sum = 0;
-for (let i = 1; i <= 100; i++) {
-    sum += i;
-}
-console.log("Сума чисел від 1 до 100:", sum);
-
-// ========================================
-// Завдання 7: Функції
-// Створіть функції для:
-// - обчислення площі прямокутника
-// - перевірки, чи число просте
-// - знаходження максимального числа в масиві
-
-// Ваш код тут:
-function calculateRectangleArea(width, height) {
-    return width * height;
-}
-
-function isPrime(number) {
-    if (number <= 1) return false;
-    if (number <= 3) return true;
-    if (number % 2 === 0 || number % 3 === 0) return false;
-
-    for (let i = 5; i * i <= number; i += 6) {
-        if (number % i === 0 || number % (i + 2) === 0) return false;
-    }
-    return true;
-}
-
-function findMaxInArray(arr) {
-    if (arr.length === 0) return null;
-    let max = arr[0];
-    for (let i = 1; i < arr.length; i++) {
-        if (arr[i] > max) {
-            max = arr[i];
-        }
-    }
-    return max;
-}
-
-// // Приклади використання:
-// console.log("Площа прямокутника 5x3:", calculateRectangleArea(5, 3));
-// console.log("Чи є 17 простим числом:", isPrime(17));
-// console.log("Максимальне число в масиві [3, 7, 2, 9, 1]:", findMaxInArray([3, 7, 2, 9, 1]));
-
-// ========================================
-// Завдання 8: Об'єкти
-// Створіть об'єкт "книга" з властивостями:
-// - назва, автор, рік, кількість сторінок
-// - метод для виведення інформації про книгу
-// - метод для перевірки, чи книга стара (старше 10 років)
-
-// Ваш код тут:
-let book = {
-    title: "Назва книги",
-    author: "Автор книги",
-    year: 2020,
-    pages: 300,
-
-    getInfo: function() {
-        return `"${this.title}" авторства ${this.author}, ${this.year} рік, ${this.pages} сторінок`;
-    },
-
-    isOld: function() {
-        let currentYear = new Date().getFullYear();
-        return (currentYear - this.year) > 10;
-    }
-};
-
-console.log(book.getInfo());
-console.log("Чи стара книга:", book.isOld());
-
-// ========================================
-// ІНСТРУКЦІЯ:
-// 1. Розкоментуйте код для кожного завдання по черзі
-// 2. Змініть значення змінних на свої
-// 3. Запустіть код та подивіться на результат
-// 4. Експериментуйте з різними значеннями
-// 5. Спробуйте створити власні варіанти завдань
-
-
+console.log(getElementWidth("50px", "8px", "4px")); // 74
+console.log(getElementWidth("60px", "12px", "8.5px")); // 101
+console.log(getElementWidth("200px", "0px", "0px")); // 200
